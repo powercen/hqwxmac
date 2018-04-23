@@ -1,0 +1,161 @@
+// Fonts
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Variables
+@import "variables";
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$active-color: #0023ff;
+
+body, html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#app {
+  height: 100%;
+  position: relative;
+  .weui-tab {
+    position: static;
+    height: auto;
+    .weui-tabbar {
+      position: fixed;
+    }
+  }
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.pages-training {
+  .weui-grid__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .weui-footer, .weui-grid__label {
+    font-size: 14px;
+  }
+
+  .weui-grid__icon + .weui-grid__label {
+    margin-bottom: 0;
+  }
+}
+
+.weui-tabbar__label {
+  margin-bottom: 0;
+}
+
+.router-link-active {
+  .weui-tabbar__label {
+    color: #007bff;
+  }
+}
+
+.mui-bar-tab .hqwx-tab-item {
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mui-bar-tab .hqwx-tab-item .mui-icon {
+    top: 3px;
+    width: 24px;
+    height: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.mui-bar-tab .hqwx-tab-item .mui-icon ~ .mui-tab-label {
+    font-size: 11px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mui-tab-label, .mui-icon {
+  color: #1b1e21;
+}
+
+.router-link-active {
+  .mui-tab-label,.mui-icon{
+    color: $active-color;
+  }
+}
+
+.text-lighter {
+  color: #aeb9c4;
+}
+
+.mui-content {
+  background-color: transparent;
+  .title{
+    line-height: 2rem;
+    padding-left: 10px;
+    margin-bottom: 0;
+  }
+  .mui-table-view-cell {
+      .subtitle {
+          font-weight: 600;
+          color: #5a6268;
+      }
+  }
+}
+
+.detail-content {
+  p {
+    margin-bottom: 5px!important;
+  }
+
+  .nav-item {
+    font-size: 15px;
+  }
+}
+
+
+
+th.id {
+  font-size: 15px;
+  width: 20px;
+}
+th.updated {
+  font-size: 15px;
+  width: 100px;
+}
+th.manage {
+  font-size: 15px;
+  width: 100px;
+}
+
+.table td {
+  font-size: 14px;
+}
+
+.table th, .table td {
+  padding: 0.2rem;
+  vertical-align: middle;
+}
+
+.table .btn-sm,.table .btn-group-sm > .btn {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+
+
+
