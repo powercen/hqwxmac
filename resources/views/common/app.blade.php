@@ -32,7 +32,8 @@
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
                     <li class="nav-item mr-3">
-                        <a class="nav-link" href="{{ route('posts.create') }}">新增文章</a>
+                        {{--<a class="nav-link" href="{{ route('posts.create') }}">新增文章</a>--}}
+                        @yield('action')
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="document.getElementById('logoutform').submit()">
@@ -45,6 +46,7 @@
         </div>
     </nav>
 
+    @include('common._errors')
     @yield('content')
 </div>
 <script src="{{ asset('js/adminapp.js') }}"></script>

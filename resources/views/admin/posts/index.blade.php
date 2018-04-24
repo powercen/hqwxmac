@@ -19,11 +19,12 @@
                         <h4 class="col-2">操作</h4>
                     </div>
                 </li>
+                @foreach($posts as $post)
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col-1">1</div>
-                        <div class="col-7">起来去问驱蚊器我去问看情况了千万</div>
-                        <div class="col-2">2018-04-22</div>
+                        <div class="col-1">{{ $post->id }}</div>
+                        <div class="col-7">{{ $post->title }}</div>
+                        <div class="col-2">{{ $post->updated_at }}</div>
                         <div class="col-2">
                             <div class="row">
                                 <div class="col-4"><a class="btn btn-sm btn-primary text-white">编辑</a></div>
@@ -32,8 +33,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="list-group-item">
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>
