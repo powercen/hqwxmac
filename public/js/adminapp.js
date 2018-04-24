@@ -26035,7 +26035,7 @@ window.Vue = __webpack_require__(29);
 
 if ($('#adminapp').length) {
 
-    new Vue({
+    var vm = new Vue({
         el: '#adminapp',
         data: {
             selected: '',
@@ -26045,7 +26045,15 @@ if ($('#adminapp').length) {
             changeSelected: function changeSelected(event) {
                 this.selected = $(event.target).data('icon');
             }
+        },
+
+        mounted: function mounted() {
+            var tag_icon = $('.position-absolute .iconfont').data('tag-icon');
+            if (tag_icon) {
+                this.selected = tag_icon;
+            }
         }
+
     });
 }
 

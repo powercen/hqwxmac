@@ -14,11 +14,11 @@
 <div id="adminapp" class="{{ route_name() }}">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('dashboard') }}">华庆微信</a>
+            <a class="navbar-brand" href="{{ route('tags.index') }}">华庆微信</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item mr-2">
-                        <a class="nav-link active" href="{{ route('dashboard') }}">厂部培训</a>
+                        <a class="nav-link active" href="{{ route('tags.index') }}">厂部培训</a>
                     </li>
                     <li class="nav-item mr-2">
                         <a class="nav-link" href="#">华庆互动</a>
@@ -36,7 +36,7 @@
                         @yield('action')
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="document.getElementById('logoutform').submit()">
+                        <a class="nav-link" onclick="document.getElementById('logoutform').submit()" style="cursor: pointer;">
                             <span class="mui-icon iconfont icon-tuichu text-danger f20 font-weight-bold"></span></a>
 
                         <form class="mb-0" action="{{ route('logout') }}" method="post" id="logoutform">@csrf</form>
@@ -49,6 +49,7 @@
     @include('common._errors')
     @yield('content')
 </div>
+
 <script src="{{ asset('js/adminapp.js') }}"></script>
 @stack('tcescript')
 </body>

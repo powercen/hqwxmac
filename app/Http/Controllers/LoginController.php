@@ -21,7 +21,7 @@ class LoginController extends Controller
     public function Login(UserRequest $request)
     {
         if(Auth::attempt(['name'=>$request->name, 'password'=>$request->password])){
-            return redirect()->route('w');
+            return redirect()->route('tags.index');
         }
 
         return redirect()->route('login');

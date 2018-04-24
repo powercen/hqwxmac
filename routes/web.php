@@ -24,7 +24,7 @@ Route::post('login', 'LoginController@login')->name('login');
 
 //Route::post('posts/uploadImage', 'Admin\PostsController@uploadImage')->name('posts.uploadImage');
 Route::group(['namespace' => 'Admin', 'middleware'=>'auth'], function (){
-    Route::get('dashboard', 'AdminController@dashboardView')->name('dashboard');
+    //Route::get('dashboard', 'AdminController@dashboardView')->name('dashboard');
     Route::post('logout', 'AdminController@logout')->name('logout');
     Route::resource('posts', 'PostsController', ['except'=>['show']]);
     Route::resource('tags', 'TagsController');
