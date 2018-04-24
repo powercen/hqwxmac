@@ -26,9 +26,9 @@ Route::post('login', 'LoginController@login')->name('login');
 Route::group(['namespace' => 'Admin', 'middleware'=>'auth'], function (){
     Route::get('dashboard', 'AdminController@dashboardView')->name('dashboard');
     Route::post('logout', 'AdminController@logout')->name('logout');
-    Route::resource('posts', 'PostsController');
+    Route::resource('posts', 'PostsController', ['except'=>['show']]);
     Route::resource('tags', 'TagsController');
-    Route::post('posts/uploadImage', 'PostsController@uploadImage')->name('posts.uploadImage');
+    Route::post('uploadImage', 'PostsController@uploadImage')->name('posts.uploadImage');
 });
 
 //微信视图

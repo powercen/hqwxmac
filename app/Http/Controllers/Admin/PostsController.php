@@ -30,7 +30,8 @@ class PostsController extends Controller
     {
         //dd($request->file('file'));
         $imgpath = request()->file('file')->store('images', 'public');
-        return json_encode(['location' => '/storage/'.$imgpath]);
+        return response()->json(['location' => config('app.url') . '/storage/'.$imgpath]);
+        //return response()->json(['location' => $imgpath]);
     }
 
     public function store(Request $request)
@@ -46,6 +47,34 @@ class PostsController extends Controller
         ]);
 
         $post = Post::create($validation);
+        $tid = $post->tid;
+        $name = urlencode($post->tag->name);
+        return redirect()->route('posts.index', compact('tid', 'name'));
+    }
+
+    public function edit(Post $post)
+    {
+        $name = urldecode(request('name'));
+        return view('admin.posts.create', compact('post', 'name'));
+    }
+
+    public function destroy($id)
+    {
+        Post::destroy($id);
+        return back();
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $validation = $request->validate( [
+            'title' => 'required|min:3',
+            'content' => 'required|min:3',
+        ], [
+            'title.required' => '标题必须填写',
+            'content.required' => '文章内容必须填写'
+        ]);
+
+        $post->update($validation);
         $tid = $post->tid;
         $name = urlencode($post->tag->name);
         return redirect()->route('posts.index', compact('tid', 'name'));

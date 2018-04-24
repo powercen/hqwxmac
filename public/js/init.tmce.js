@@ -4,16 +4,24 @@ tinymce.init({
     plugins: [
         "advlist autolink lists link image charmap print preview anchor",
         "searchreplace visualblocks code wordcount colorpicker textcolor",
-        "insertdatetime media table contextmenu paste imagetools"
+        "insertdatetime media table contextmenu paste imagetools hr textpattern"
     ],
     toolbar: "insertfile undo redo styleselect removeformat forecolor backcolor bold italic" +
     "| alignleft aligncenter alignright | alignjustify  bullist numlist outdent  | indent  link image media table code",
-    language_url : '../js/languages/zh_CN.js',
-    language: 'zh_CN',
+    // plugins: 'print preview fullpage searchreplace autolink directionality visualblocks ' +
+    // 'visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist ' +
+    // 'lists textcolor wordcount imagetools  contextmenu colorpicker textpattern code',
+    //
+    // toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | image link | alignleft aligncenter alignright alignjustify  ' +
+    // '| numlist bullist outdent indent  removeformat table |  media code',
 
+    language_url : '../../js/languages/zh_CN.js',
+    language: 'zh_CN',
+    image_description: false,
     automatic_uploads: true,
-    image_title: true,
-    images_upload_url: 'uploadImage',
+    image_title: false,
+    media_live_embeds: true,
+    images_upload_url: '../../uploadImage',
     file_picker_types: 'image',
     setup: function (editor) {
         editor.on('init change', function () {
@@ -40,6 +48,5 @@ tinymce.init({
         };
         input.click();
     }
-
 
 });
