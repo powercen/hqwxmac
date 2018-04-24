@@ -26,6 +26,6 @@ class Tag extends Model
 
     public function posts()
     {
-        $this->hasMany(Post::class, 'tid', 'id');
+        return $this->hasMany(Post::class, 'tid', 'id');
     }
 }

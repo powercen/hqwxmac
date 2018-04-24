@@ -38,6 +38,6 @@ class Post extends Model
 
     public function tag()
     {
-        $this->belongsTo(Tag::class, 'id', 'tid');
+        return $this->belongsTo(Tag::class, 'tid', 'id');
     }
 }

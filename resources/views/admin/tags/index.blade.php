@@ -54,7 +54,7 @@
         <!---end--->
         <hr>
         @foreach($tags as $tag)
-        <div class="row mb-1">
+        <div class="row mb-3">
             <div class="col-1 mt-2">{{ $tag->id }}</div>
             <div class="col-3 mt-2">{{ $tag->name }}</div>
             <div class="col-4 mt-2 position-relative">
@@ -70,6 +70,7 @@
             </div>
         </div>
         @endforeach
+        {{ $tags->links() }}
     </div>
 
 @endsection
