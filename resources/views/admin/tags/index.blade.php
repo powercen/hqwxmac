@@ -32,7 +32,11 @@
                     <a  href="{{ route('tags.edit', ['tag' => $tag->id]) }}" class="btn btn-primary btn-sm mr-2">修改分类</a>
                     <a href="{{ route('posts.index', ['tid' => $tag->id, 'name' => urlencode($tag->name)]) }}"
                        class="btn btn-success btn-sm mr-3">编辑文章</a>
-                    <button href="" class="btn btn-danger btn-sm mr-3">删除分类</button>
+                    @if($tag->posts_count)
+                        <button class="btn btn-danger btn-sm mr-3" disabled="disabled">删除分类</button>
+                    @else
+                        <button class="btn btn-danger btn-sm mr-3">删除分类</button>
+                    @endif
                 </div>
             </div>
         </li>

@@ -16,9 +16,9 @@ if($('#adminapp').length){
         },
 
         mounted: function () {
-             let tag_icon = $('.position-absolute .iconfont').data('tag-icon')
+            let tag_icon = $('.position-absolute .iconfont').data('tag-icon')
             if(tag_icon){
-                this.selected = tag_icon;
+                this.selected = tag_icon
             }
 
         }

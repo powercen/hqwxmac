@@ -10,7 +10,7 @@
                 </div>
 
             </div>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush mb-2">
                 <li class="list-group-item">
                     <div class="row">
                         <h4 class="col-1">ID</h4>
@@ -49,6 +49,7 @@
                 @endif
 
             </ul>
+            {{ $posts->links() }}
         </div>
     </div>
 @endsection

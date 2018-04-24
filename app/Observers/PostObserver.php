@@ -34,6 +34,16 @@ class PostObserver
 
     }
 
+    public function saved(Post $post)
+    {
+        $post->tag()->increment('posts_count', 1);
+    }
+
+    public function deleted(Post $post)
+    {
+        $post->tag()->decrement('posts_count', 1);
+    }
+
     protected function fix_path($img_element)
     {
         return config('app.url'). str_replace('..', '', $img_element->src);

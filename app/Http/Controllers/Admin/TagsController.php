@@ -33,9 +33,23 @@ class TagsController extends Controller
     public function edit(Tag $tag)
     {
         $tags = Tag::paginate(10);
-        //写入cookie
-        Cookie::queue('tag_icon', $tag->icon, 100000);
         return view('admin.tags.index', compact('tags', 'tag'));
+
+    }
+
+    public function update(Request $request, Tag $tag)
+    {
+        $validation = $request->validate([
+            'name' => 'required|min:1',
+            'icon' => 'required'
+        ],
+        [
+            'name.required' => '分类名称必须填写',
+            'icon.required' => '必须选择一个分类图标'
+        ]);
+
+        $tag->update($validation);
+        return redirect()->route('tags.index');
 
     }
 
