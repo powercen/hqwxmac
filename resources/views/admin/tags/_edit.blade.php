@@ -7,7 +7,7 @@
             {{ method_field('PUT') }}
         </div>
         <div class="col-4 position-relative">
-            <button type="button" class="btn btn-primary d-inline mr-2 btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-primary d-inline mr-2 btn-outline-primary btn-sm mt-1" data-toggle="modal" data-target="#exampleModalCenter">
                 +
             </button>
             <div class="position-absolute" style="top:-10px;left: 70px;"><span class="iconfont f36" :class="selected" data-tag-icon="{{ $tag->icon }}"></span></div>
@@ -40,6 +40,7 @@
         </div>
         <div class="col-4">
             <button type="submit" class="btn btn-primary">更新分类</button>
+            {{--<a class="btn btn-success" href="{{ route('tags.index') }}">新建分类</a>--}}
         </div>
     </div>
 </form>

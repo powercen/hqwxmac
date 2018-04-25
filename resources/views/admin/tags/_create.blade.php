@@ -5,7 +5,7 @@
             @csrf
         </div>
         <div class="col-4 position-relative">
-            <button type="button" class="btn btn-primary d-inline mr-2 btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-primary d-inline mr-2 btn-outline-primary btn-sm mt-1" data-toggle="modal" data-target="#exampleModalCenter">
                 +
             </button>
             <div class="position-absolute" style="top:-10px;left: 70px;"><span class="iconfont f36" :class="selected"></span></div>

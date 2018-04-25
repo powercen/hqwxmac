@@ -7,6 +7,9 @@
                     <div class="col mr-auto"><a class="btn btn-outline-dark disabled">{{ $name }}</a></div>
                     <div class="col-auto"><a class="btn btn-success text-white"
                          href="{{ route('posts.create', ['tid' => $tid, 'name' => urlencode($name)]) }}">创建文章</a></div>
+
+                    <div class="col-auto"><a class="btn btn-dark text-white"
+                                             href="{{ route('tags.index') }}">返回</a></div>
                 </div>
 
             </div>

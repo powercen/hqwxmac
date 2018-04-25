@@ -1,7 +1,7 @@
 @extends('common.app')
 @section('content')
     <div class="container mt-4 bg-white py-3" id="tags">
-        <div class="card border-bottom-0">
+        <div class="card">
             <div class="card-header">
                 <div class="row mb-2">
                     <h4 class="col-1 font-weight-bold"></h4>
@@ -31,11 +31,15 @@
                 <div class="col-4">
                     <a  href="{{ route('tags.edit', ['tag' => $tag->id]) }}" class="btn btn-primary btn-sm mr-2">修改分类</a>
                     <a href="{{ route('posts.index', ['tid' => $tag->id, 'name' => urlencode($tag->name)]) }}"
-                       class="btn btn-success btn-sm mr-3">编辑文章</a>
+                       class="btn btn-success btn-sm mr-3">管理文章</a>
                     @if($tag->posts_count)
                         <button class="btn btn-danger btn-sm mr-3" disabled="disabled">删除分类</button>
                     @else
-                        <button class="btn btn-danger btn-sm mr-3">删除分类</button>
+                        <form action="{{ route('tags.destroy', ['id' => $tag->id]) }}" method="post" class="d-inline">
+                            @csrf
+                            {{ method_field('DELETE') }}
+                            <button class="btn btn-danger btn-sm mr-3" type="submit">删除分类</button>
+                        </form>
                     @endif
                 </div>
             </div>
