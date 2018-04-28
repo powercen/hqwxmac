@@ -15,7 +15,7 @@
 <body>
     <div id="app" class="{{ route_name() }}">
         <router-view></router-view>
-        <tabbar></tabbar>
+        <tabbar v-if="tabbarShow"></tabbar>
     </div>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

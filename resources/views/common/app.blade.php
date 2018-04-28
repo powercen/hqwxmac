@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">系统设置</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('office.upload') }}">人员信息</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
                     <li class="nav-item mr-3">

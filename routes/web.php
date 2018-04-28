@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::any('/wechat', 'WeChatController@serve');
 
 
-//登陆页面
+//后台登陆页面
 Route::get('login', 'LoginController@loginView')->name('login');
 Route::post('login', 'LoginController@login')->name('login');
 
@@ -29,6 +29,9 @@ Route::group(['namespace' => 'Admin', 'middleware'=>'auth'], function (){
     Route::resource('posts', 'PostsController', ['except'=>['show']]);
     Route::resource('tags', 'TagsController');
     Route::post('uploadImage', 'PostsController@uploadImage')->name('posts.uploadImage');
+
+    Route::get('uploadfile', 'OfficeController@upload')->name('office.upload');
+    Route::post('uploadfile', 'OfficeController@uploadfile')->name('office.uploadfile');
 });
 
 //微信视图
@@ -39,7 +42,6 @@ Route::group(['namespace' => 'Weixin', 'prefix' => 'weixin'], function (){
     Route::get('/interaction', 'PagesController@interactionView')->name('pages.interaction');
     //考勤
     Route::get('/punchcard', 'PagesController@punchcardView')->name('pages.punchcard');
-
 });
 
 

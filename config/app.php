@@ -211,4 +211,6 @@ return [
         'EasyWeChat' => Overtrue\LaravelWeChat\Facade::class,
     ],
 
+    'faker_locale' => 'zh_CN',
+
 ];

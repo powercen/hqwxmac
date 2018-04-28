@@ -10,8 +10,14 @@ FaskClick.attach(document.body);
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    computed: {
+        tabbarShow: function () {
+            return this.$route.name !== 'login'
+        }
+    }
 });
+
 
 
 

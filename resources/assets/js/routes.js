@@ -2,6 +2,11 @@ import VueRouter from 'vue-router'
 
 let routes = [
     {
+        path:'/weixin/login',
+        name: 'login',
+        component:require('./components/login/Index')
+    },
+    {
         path:'/weixin/home',
         name: 'home',
         component:require('./components/training/Index')

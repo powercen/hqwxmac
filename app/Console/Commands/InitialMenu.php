@@ -47,7 +47,7 @@ class InitialMenu extends Command
             [
                 'type' => 'view',
                 'name' => '培训首页',
-                'url' => route('pages.training', 'home')
+                'url' => route('pages.training', 'login')
             ],
             [
                 'type' => 'view',
